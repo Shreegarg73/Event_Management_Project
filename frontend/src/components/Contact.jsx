@@ -32,7 +32,7 @@ const Contact=()=>{
             <div className="contact container">
                 <div className="banner">
                     <div className="item">
-                        <h4>Address</h4>
+                        <h4>Avaible</h4>
                         <p>Anywhere, Anytime</p>
                     </div>
                     <div className="item">
