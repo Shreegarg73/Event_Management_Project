@@ -46,7 +46,9 @@ const Contact=()=>{
                 </div>
                 <div className="banner">
                     
-                        <img src="map.jpg">
+                       <div className="item">
+                    <img src="map.jpg" alt="Map" onError={(e) => e.target.style.display = 'none'} />
+                </div>
                     
                     <div className="item">
                         <form onSubmit={handleSendMessage}>
