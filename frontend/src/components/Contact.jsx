@@ -45,14 +45,7 @@ const Contact=()=>{
                     </div>
                 </div>
                 <div className="banner">
-                    <div className="item">
-                        <iframe 
-                        src="https://www.google.co.in/maps/place/Artisan+Studio+by+A/@31.2915869,75.6235411,17z/data=!3m1!4b1!4m6!3m5!1s0x391a599439938c4d:0xdfb9d149b2be5ee8!8m2!3d31.2915869!4d75.626116!16s%2Fg%2F11swt95w05?entry=ttu"
-                        style={{border:0,width:"100%",height:"450px"}}
-                        allowFullScreen=""
-                        loading="lazy"
-                        referrerPolicy="no-reference-when-downgrade"/>
-                        </div>
+                    
                     <div className="item">
                         <form onSubmit={handleSendMessage}>
                             <h2>CONTACT</h2>
