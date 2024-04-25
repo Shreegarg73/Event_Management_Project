@@ -45,7 +45,9 @@ const Contact=()=>{
                     </div>
                 </div>
                 <div className="banner">
-                    
+                    <div className="item">
+                        <img src="map.jpg">
+                    </div>
                     <div className="item">
                         <form onSubmit={handleSendMessage}>
                             <h2>CONTACT</h2>
