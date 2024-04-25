@@ -47,7 +47,7 @@ const Contact=()=>{
                 <div className="banner">
                     
                        <div className="item">
-                    <img src="map.jpg" alt="Map" onError={(e) => e.target.style.display = 'none'} />
+                    <img src="/map.jpg" alt="Map" onError={(e) => e.target.style.display = 'none'} />
                 </div>
                     
                     <div className="item">
