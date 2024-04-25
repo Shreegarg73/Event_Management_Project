@@ -3,37 +3,41 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import map from './map.jpg';
 
-const Contact=()=>{
-    const [name,setName]=useState("");
-    const [email,setEmail]=useState("");
-    const [subject,setSubject]=useState("");
-    const [message,setMessage]=useState("");
+const Contact = () => {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [subject, setSubject] = useState("");
+    const [message, setMessage] = useState("");
 
-    const handleSendMessage=async(e)=>{
+    const handleSendMessage = async (e) => {
         e.preventDefault();
-        await axios.post("https://rich-lime-clam-tie.cyclic.app/api/v1/message/send",{
-            name,
-            email,
-            subject,
-            message
-        },{ withCredentials: true,headers:{"Content-Type":"application.json"}}
-    ).then(res=>{
-        toast.success(res.data.message);
-        setName("");
-        setEmail("");
-        setSubject("");
-        setMessage("");
-    }).catch(error=>{
-        toast.error(error.response.data.message);
-    })
+        try {
+            const response = await axios.post(
+                "https://rich-lime-clam-tie.cyclic.app/api/v1/message/send",
+                {
+                    name,
+                    email,
+                    subject,
+                    message
+                },
+                { withCredentials: true, headers: { "Content-Type": "application/json" } }
+            );
+            toast.success(response.data.message);
+            setName("");
+            setEmail("");
+            setSubject("");
+            setMessage("");
+        } catch (error) {
+            toast.error(error.response.data.message);
+        }
     };
 
-    return(
+    return (
         <>
             <div className="contact container">
                 <div className="banner">
                     <div className="item">
-                        <h4>Avaible</h4>
+                        <h4>Available</h4>
                         <p>Anywhere, Anytime</p>
                     </div>
                     <div className="item">
@@ -46,35 +50,29 @@ const Contact=()=>{
                     </div>
                 </div>
                 <div className="banner">
-                    
-                       const MyComponent = () => {
-    return (
-        <div>
-            <img src={map} alt="My Image" />
-        </div>
-    );
-};
-                    
+                    <div className="item">
+                        <img src={map} alt="Map" />
+                    </div>
                     <div className="item">
                         <form onSubmit={handleSendMessage}>
                             <h2>CONTACT</h2>
                             <div>
-                                <input type="text" placeholder="Name" value={name} onChange={(e)=>setName(e.target.value)}/>
-                                <input type="email" placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                                <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+                                <input type="email" placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} />
                             </div>
                             <input
-                type="text"
-                placeholder="Subject"
-                value={subject}
-                onChange={(e) => setSubject(e.target.value)}
-              />
-              <textarea
-                rows={10}
-                placeholder="Message"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-              />
-              <button type="submit">Send</button>
+                                type="text"
+                                placeholder="Subject"
+                                value={subject}
+                                onChange={(e) => setSubject(e.target.value)}
+                            />
+                            <textarea
+                                rows={10}
+                                placeholder="Message"
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
+                            />
+                            <button type="submit">Send</button>
                         </form>
                     </div>
                 </div>
@@ -82,6 +80,5 @@ const Contact=()=>{
         </>
     )
 }
-export default MyComponent;
 
 export default Contact;
