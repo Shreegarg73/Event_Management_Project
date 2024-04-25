@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
+import map from './map.jpg';
 
 const Contact=()=>{
     const [name,setName]=useState("");
@@ -46,9 +47,13 @@ const Contact=()=>{
                 </div>
                 <div className="banner">
                     
-                       <div className="item">
-                    <img src="/map.jpg" alt="Map" onError={(e) => e.target.style.display = 'none'} />
-                </div>
+                       const MyComponent = () => {
+    return (
+        <div>
+            <img src={map} alt="My Image" />
+        </div>
+    );
+};
                     
                     <div className="item">
                         <form onSubmit={handleSendMessage}>
@@ -77,5 +82,6 @@ const Contact=()=>{
         </>
     )
 }
+export default MyComponent;
 
 export default Contact;
